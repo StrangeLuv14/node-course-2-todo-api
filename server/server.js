@@ -37,7 +37,6 @@ app.get('/todos/:id', (req, res) => {
 	}
 	Todo.findById(id).then((todo) => {
 		if (!todo) {
-			console.log('Unable to find todo by Id');
 			return res.status(404).send();
 		}
 		res.status(200).send({todo});
@@ -54,7 +53,6 @@ app.delete('/todos/:id', (req, res) => {
 
 	Todo.findByIdAndRemove(id).then((todo) => {
 		if (!todo) {
-			console.log('Unable to find todo by Id');
 			return res.status(404).send();
 		}
 		res.status(200).send({todo});
