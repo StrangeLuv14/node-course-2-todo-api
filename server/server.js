@@ -100,7 +100,6 @@ app.post('/users', (req, res) => {
 		res.header('x-auth', token).send(user.toJSON());
 	})
 	.catch((e) => {
-		console.log(e);
 		res.status(400).send(e);
 	});
 });
